@@ -132,7 +132,9 @@ painting in the database.
   - should return a string formatted as follows:
 
 ```txt
-{insert painting name} was painted by {insert artist full name} which currently resides in the {insert museum name}. It is currently priced at {insert painting price}.
+{insert painting name} was painted by {insert artist full name} which currently
+resides in the {insert museum name}. It is currently priced at {insert painting
+price}.
 ```
 
 #### Museum
