@@ -148,4 +148,4 @@ price}.
 - `Museum#exhibit_artist(artist)`
   - takes an `artist` (an instance of the `Artist` class) and
   - moves all their paintings to this museum
-  - you will have to reassociate every painting belonging to the artist so it now belongs to this museum!
+  - you will have to reassociate every painting belonging to the artist, how can you do that?
