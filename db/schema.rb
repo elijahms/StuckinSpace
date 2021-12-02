@@ -10,18 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_29_181556) do
+ActiveRecord::Schema.define(version: 2021_12_02_220809) do
 
-  create_table "artists", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.integer "birthyear"
-    t.string "style"
+  create_table "inventories", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "item_id"
+    t.boolean "has"
   end
 
-  create_table "museums", force: :cascade do |t|
+  create_table "item_locations", force: :cascade do |t|
+    t.integer "item_id"
+    t.integer "room_id"
+    t.boolean "is_in"
+  end
+
+  create_table "items", force: :cascade do |t|
     t.string "name"
-    t.string "city"
+    t.boolean "is_takeble"
+    t.boolean "is_talkable"
+    t.boolean "is_attackable"
+    t.float "durability"
+    t.string "description"
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "health"
+    t.integer "score"
+    t.boolean "is_dead"
+    t.integer "room_id"
   end
 
 end
