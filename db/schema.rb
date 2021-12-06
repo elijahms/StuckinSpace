@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_02_220809) do
+ActiveRecord::Schema.define(version: 2021_12_06_211758) do
 
   create_table "inventories", force: :cascade do |t|
     t.integer "user_id"
@@ -26,16 +26,29 @@ ActiveRecord::Schema.define(version: 2021_12_02_220809) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
-    t.boolean "is_takeble"
-    t.boolean "is_talkable"
-    t.boolean "is_attackable"
-    t.float "durability"
+    t.boolean "is_takeable"
     t.string "description"
+    t.string "inspect_choice_1"
+    t.string "inspect_choice_2"
+    t.boolean "is_talkable"
+    t.string "talk_response"
+    t.string "talk_choice_1"
+    t.string "talk_choice_2"
+    t.boolean "is_attackable"
+    t.string "attack_response"
+    t.float "durability"
+    t.integer "catalyst_item"
+    t.string "catalyst_response"
+    t.boolean "exit_trigger"
+    t.string "triggers_on"
+    t.string "death_trigger"
   end
 
   create_table "rooms", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.integer "death_threshold"
+    t.string "death_threshold_met"
   end
 
   create_table "users", force: :cascade do |t|
