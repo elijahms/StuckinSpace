@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_07_163723) do
+ActiveRecord::Schema.define(version: 2021_12_07_192114) do
 
   create_table "inventories", force: :cascade do |t|
     t.integer "user_id"
@@ -42,6 +42,9 @@ ActiveRecord::Schema.define(version: 2021_12_07_163723) do
     t.boolean "exit_trigger"
     t.string "triggers_on"
     t.string "death_trigger"
+    t.boolean "has_been_taken"
+    t.boolean "has_been_attacked"
+    t.boolean "has_been_talked"
   end
 
   create_table "rooms", force: :cascade do |t|

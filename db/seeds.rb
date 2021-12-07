@@ -107,6 +107,26 @@ Item.create(
   triggers_on: 'attack',
   death_trigger: 'talk',
 )
+Item.create(
+  name: 'Log',
+  is_takeable: true,
+  description:
+    "The Log is open and has a diagram that clearly depicts the man on the table. The text is not English, but you can discern that the person lying on the table was probed, and was considered a non-viable specimen. There are some numbers sribbled on the margins. ",
+  inspect_choice_1: nil,
+  inspect_choice_2: nil,
+  is_talkable: false,
+  talk_response: nil,
+  talk_choice_1: nil,
+  talk_choice_2: nil,
+  is_attackable: false,
+  attack_response: nil,
+  durability: 0.0,
+  catalyst_item: true,
+  catalyst_response: '',
+  exit_trigger: false,
+  triggers_on: 'inspect',
+  death_trigger: nil,
+)
 
 Inventory.create(user_id: 1, item_id: 1, has: false)
 Inventory.create(user_id: 1, item_id: 2, has: false)
@@ -132,6 +152,14 @@ Room.create(
   death_threshold: 5,
   death_threshold_met:
     'Two tall, grey, smooth aliens enter the room, one wearing a military like garb and the other a lab coat. They are surprised to see you awake, but do not panic. The one in military garb points a small device at you, and you experience a quick shock followed by full-body-paralysis. They carry you through the alien ship and to a laboratory like room, where you are probed. You do not survive the process. You are dead.',
+)
+Room.create(
+  name: 'Laboratory',
+  description:
+    'After stumbling through the disorienting labrynth of the ship, and attempting many doors you finally arrive on one that is ajar. You enter, the first thing that jumps out to you in the clearly Deadman lying on some sort of inspection table. Scanning the room you see a Teleporting station, a Log, a Computer, and a Stungun',
+  death_threshold: 5,
+  death_threshold_met:
+    'You hear a frenzy of radio chatter outside, and realize you are surrounded. Frantically you rush towards the teleporter and press the big red "Beam me up" button. The last thing you hear is "Human butthole dectected, malfunctioning" You do not survive the process. You are dead.',
 )
 
 ItemLocation.create(item_id: 1, room_id: 1, is_in: true)
