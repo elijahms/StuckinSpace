@@ -18,4 +18,9 @@ class ApplicationController < Sinatra::Base
     room.to_json
   end
 
+  get '/item/:id' do
+    items = Room.find(params[:id]).items
+    items.to_json
+  end
+
 end
