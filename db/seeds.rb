@@ -55,7 +55,7 @@ Item.create(
     " 'It's been so long since I've felt anything that I welcome pain. Hit me as hard as you can, so I can feel the sublime ecstasy of pleasure. Go on, do it! ' ",
   is_attackable: true,
   attack_response:
-    " You punch your cellmate in the face. 'My nose! You broke my nose! What is wrong with you?! Guard!!!' Blood flowing down his face, he calls for the guard-- a tall, smooth, grey alien, who deactivates the laser wall and enters your cell. The Guard seems surprised to see you awake, so you have a chance to surprise him.",
+    " You punch your cellmate in the face. 'My nose! You broke my nose! What is wrong with you?! Guard!!!' Blood flowing down his face, he calls for the guard-- a tall, smooth, grey alien, temporarily deactivates the laser wall with a Keycard and enters your cell. The Guard seems surprised to see you awake, so you have a chance to surprise him.",
   durability: 1.0,
   catalyst_item: 0,
   catalyst_response: nil,
@@ -72,17 +72,18 @@ Item.create(
   inspect_choice_2: nil,
   is_talkable: true,
   talk_response:
-    'You run up to the laser wall and call for help. Moments later, a tall, smooth, grey alien deactivates the laser wall and enters your cell. The Guard seems surprised to see you awake, so you have a chance to surprise him.',
+    'You run up to the laser wall and call for help. Moments later, a tall, smooth, grey alien uses a Keycard to temporarily deactivate the laser wall and enters your cell. The Guard seems surprised to see you awake, so you have a chance to surprise him.',
   talk_choice_1: nil,
   talk_choice_2: nil,
   is_attackable: true,
   attack_response:
     'You attempt to punch the laser wall, and your entire arm is incinerated. You catch on fire and die.',
   durability: 0.0,
-  catalyst_item: 0,
-  catalyst_response: nil,
-  exit_trigger: true,
-  triggers_on: nil,
+  catalyst_item: 5,
+  catalyst_response:
+    'You wave your keycard at the Lasers, and they temporarily turn off. You may now EXIT the room freely.',
+  exit_trigger: false,
+  triggers_on: 'use',
   death_trigger: 'attack',
 )
 Item.create(
@@ -99,7 +100,7 @@ Item.create(
   talk_choice_2: nil,
   is_attackable: true,
   attack_response:
-    'You punch the alien in the face. Your fist tears through his soft, jelly-like flesh and you pulverize his brain. He falls dead to the floor. These aliens may look scary, but luckily for you, seem to be exceptionally weak. The laser wall remains down, and you may now EXIT the room freely.',
+    'You punch the alien in the face. Your fist tears through his soft, jelly-like flesh and you pulverize his brain. He falls dead to the floor and drops his Keycard. These aliens may look scary, but luckily for you, seem to be exceptionally weak. ',
   durability: 0.0,
   catalyst_item: 0,
   catalyst_response: '',
@@ -107,11 +108,32 @@ Item.create(
   triggers_on: 'attack',
   death_trigger: 'talk',
 )
+
+Item.create(
+  name: 'Keycard',
+  is_takeable: true,
+  description:
+    'A thin card held by the alien Guard. When waved at the laser wall, lowers the lasers and allows the holder to pass through.',
+  inspect_choice_1: nil,
+  inspect_choice_2: nil,
+  is_talkable: false,
+  talk_response: nil,
+  talk_choice_1: nil,
+  talk_choice_2: nil,
+  is_attackable: true,
+  attack_response: nil,
+  durability: 0.0,
+  catalyst_item: 0,
+  catalyst_response: nil,
+  exit_trigger: false,
+  triggers_on: 'take',
+  death_trigger: nil,
+)
 Item.create(
   name: 'Log',
   is_takeable: true,
   description:
-    "The Log is open and has a diagram that clearly depicts the man on the table. The text is not English, but you can discern that the person lying on the table was probed, and was considered a non-viable specimen. There are some numbers sribbled on the margins. ",
+    'The Log is open and has a diagram that clearly depicts the man on the table. The text is not English, but you can discern that the person lying on the table was probed, and was considered a non-viable specimen. There are some numbers sribbled on the margins. ',
   inspect_choice_1: nil,
   inspect_choice_2: nil,
   is_talkable: false,
@@ -166,5 +188,6 @@ ItemLocation.create(item_id: 1, room_id: 1, is_in: true)
 ItemLocation.create(item_id: 2, room_id: 1, is_in: true)
 ItemLocation.create(item_id: 3, room_id: 1, is_in: true)
 ItemLocation.create(item_id: 4, room_id: 1, is_in: true)
+ItemLocation.create(item_id: 5, room_id: 1, is_in: true)
 
 puts 'done seeding'
