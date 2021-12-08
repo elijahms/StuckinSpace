@@ -154,8 +154,7 @@ Item.create(
 Item.create(
   name: 'Knife',
   is_takeable: true,
-  description:
-    'A surgical Knife, presumably used for dissections.',
+  description: 'A surgical Knife, presumably used for dissections.',
   inspect_choice_1: nil,
   inspect_choice_2: nil,
   is_talkable: false,
@@ -264,12 +263,14 @@ Item.create(
   talk_choice_1: nil,
   talk_choice_2: nil,
   is_attackable: true,
-  attack_response: "You attack the computer. Yes, the information you want is 'in' the computer, but that's not the way to get it out.",
+  attack_response:
+    "You attack the computer. Yes, the information you want is 'in' the computer, but that's not the way to get it out.",
   durability: 0.0,
   catalyst_item: 8,
-  catalyst_response: "You insert the USB-C drive into the Computer, and a message in English begins to display on the screen: \n
+  catalyst_response:
+    "You insert the USB-C drive into the Computer, and a message in English begins to display on the screen: \n
   Bond, \n
-  If you're reading this message, the plan to have you abducted has gone swimmingly. I hope the USB drive didn't give you too much trouble coming out. The information from the alien Computer has been downloaded to this drive, which will give us a great advantage in preventing future abductions. You have served Queen and Country again, now use the Teleporter and escape the ship. If you run into any of the buggers-- remember your Watch, it's quite an eyesore. \n God speed, James. \n -Q"
+  If you're reading this message, the plan to have you abducted has gone swimmingly. I hope the USB drive didn't give you too much trouble coming out. The information from the alien Computer has been downloaded to this drive, which will give us a great advantage in preventing future abductions. You have served Queen and Country again, now use the Teleporter and escape the ship. If you run into any of the buggers-- remember your Watch, it's quite an eyesore. \n God speed, James. \n -Q",
   exit_trigger: true,
   triggers_on: '',
   death_trigger: nil,
@@ -279,14 +280,17 @@ Item.create(
   is_takeable: false,
   description:
     'The teleporter, an impressive piece of alien technology. A touch screen with a blueprint of the ship determines your destination, currently set to the Airlock and Escape Pods, conveniently for you. Inconvenient however-- the Teleporter seems to be on the fritz; sparks and static seem to be coming from the machine. \n 1. Use the Teleporter \n 2. Reconsider',
-  inspect_choice_1: "Hearing the steps of nearby aliens, you know you don't have time to worry about the state of the Teleporter. You hit the START button, ready to escape, but as it begins to whirr, smoke comes out of the machine and the machine reduces you to a pile of fleshy goop on the floor. You are dead.",
-  inspect_choice_2: "You do not use the Teleporter. Is there a reliable, old fashioned way to get a complicated piece of tech working?",
+  inspect_choice_1:
+    "Hearing the steps of nearby aliens, you know you don't have time to worry about the state of the Teleporter. You hit the START button, ready to escape, but as it begins to whirr, smoke comes out of the machine and the machine reduces you to a pile of fleshy goop on the floor. You are dead.",
+  inspect_choice_2:
+    'You do not use the Teleporter. Is there a reliable, old fashioned way to get a complicated piece of tech working?',
   is_talkable: false,
   talk_response: nil,
   talk_choice_1: nil,
   talk_choice_2: nil,
   is_attackable: true,
-  attack_response: "You smack the teleporter a few times, and all the sparks and static cease. It seems to be back to working perfectly. You may now EXIT the room.",
+  attack_response:
+    'You smack the teleporter a few times, and all the sparks and static cease. It seems to be back to working perfectly. You may now EXIT the room.',
   durability: 0.0,
   catalyst_item: true,
   catalyst_response: '',
