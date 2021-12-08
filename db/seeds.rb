@@ -130,10 +130,93 @@ Item.create(
   death_trigger: nil,
 )
 Item.create(
-  name: 'Log',
+  name: 'Body',
+  is_takeable: false,
+  description:
+    "The body sprawled out on the table died with a smirk on his face, despite his cruel fate. His stomach has been cut open, and many body parts removed. But even in this state, you can tell that this man was once quite handsome and, if you're checking, well-endowed. There seems to be something bulging out of a corner of his stomach.",
+  inspect_choice_1: nil,
+  inspect_choice_2: nil,
+  is_talkable: true,
+  talk_response:
+    'You attempt to speak to the dead body, but there is no response. Not sure what you were expecting--a witty retort?',
+  talk_choice_1: nil,
+  talk_choice_2: nil,
+  is_attackable: true,
+  attack_response: 'You attack the dead body. It does not fight back.',
+  durability: 0.0,
+  catalyst_item: 7,
+  catalyst_response:
+    "You cut the body open with the surgical Knife, and inside of the body's stomach, discover a USB.",
+  exit_trigger: true,
+  triggers_on: '',
+  death_trigger: nil,
+)
+Item.create(
+  name: 'Knife',
   is_takeable: true,
   description:
-    'The Log is open and has a diagram that clearly depicts the man on the table. The text is not English, but you can discern that the person lying on the table was probed, and was considered a non-viable specimen. There are some numbers sribbled on the margins. ',
+    'A surgical Knife, presumably used for dissections.',
+  inspect_choice_1: nil,
+  inspect_choice_2: nil,
+  is_talkable: false,
+  talk_response: nil,
+  talk_choice_1: nil,
+  talk_choice_2: nil,
+  is_attackable: false,
+  attack_response: nil,
+  durability: 0.0,
+  catalyst_item: true,
+  catalyst_response: nil,
+  exit_trigger: true,
+  triggers_on: '',
+  death_trigger: nil,
+)
+Item.create(
+  name: 'USB',
+  is_takeable: true,
+  description:
+    'A USB-C drive, discovered hidden in the body of the dissected human. Why would it be there?',
+  inspect_choice_1: nil,
+  inspect_choice_2: nil,
+  is_talkable: false,
+  talk_response: nil,
+  talk_choice_1: nil,
+  talk_choice_2: nil,
+  is_attackable: false,
+  attack_response: nil,
+  durability: 0.0,
+  catalyst_item: true,
+  catalyst_response: nil,
+  exit_trigger: true,
+  triggers_on: '',
+  death_trigger: nil,
+)
+Item.create(
+  name: 'Desk',
+  is_takeable: false,
+  description:
+    'A desk, made of a foreign alien metal. On top of it sits a Computer and a Datalog. There a few empty drawers, and one locked drawer. You do not see a key for it anywhere nearby, but perhaps you could force it open.',
+  inspect_choice_1: nil,
+  inspect_choice_2: nil,
+  is_talkable: false,
+  talk_response: nil,
+  talk_choice_1: nil,
+  talk_choice_2: nil,
+  is_attackable: true,
+  attack_response:
+    'You smash the desk, and try to rip open the desk drawer. After a few attempts, you force it open. Inside, you see various valuables collected from dissected humans. Most notably, a Wallet and an Omega Watch.',
+  durability: 0.0,
+  catalyst_item: true,
+  catalyst_response: nil,
+  exit_trigger: true,
+  triggers_on: '',
+  death_trigger: nil,
+)
+Item.create(
+  name: 'Watch',
+  is_takeable: true,
+  description:
+    "A platinum Watch, very expensive, definitely out of your price range. It ticks and tells time, but seems to have a number of knobs and buttons whose functions you don't recognize.",
   inspect_choice_1: nil,
   inspect_choice_2: nil,
   is_talkable: false,
@@ -145,9 +228,71 @@ Item.create(
   durability: 0.0,
   catalyst_item: true,
   catalyst_response: '',
-  exit_trigger: false,
-  triggers_on: 'inspect',
+  exit_trigger: true,
+  triggers_on: '',
   death_trigger: nil,
+)
+Item.create(
+  name: 'Wallet',
+  is_takeable: true,
+  description:
+    'A leather wallet containing several passports with different identities, and £50,000 cash.',
+  inspect_choice_1: nil,
+  inspect_choice_2: nil,
+  is_talkable: false,
+  talk_response: nil,
+  talk_choice_1: nil,
+  talk_choice_2: nil,
+  is_attackable: false,
+  attack_response: nil,
+  durability: 0.0,
+  catalyst_item: true,
+  catalyst_response: '',
+  exit_trigger: true,
+  triggers_on: '',
+  death_trigger: nil,
+)
+Item.create(
+  name: 'Computer',
+  is_takeable: false,
+  description:
+    'An alien computer, closely resembling the kind found on Earth. The information on the screen is in alien characters, so you cannot navigate through it. It does, weirdly enough, have a USB-C slot.',
+  inspect_choice_1: nil,
+  inspect_choice_2: nil,
+  is_talkable: false,
+  talk_response: nil,
+  talk_choice_1: nil,
+  talk_choice_2: nil,
+  is_attackable: true,
+  attack_response: "You attack the computer. Yes, the information you want is 'in' the computer, but that's not the way to get it out.",
+  durability: 0.0,
+  catalyst_item: 8,
+  catalyst_response: "You insert the USB-C drive into the Computer, and a message in English begins to display on the screen: \n
+  Bond, \n
+  If you're reading this message, the plan to have you abducted has gone swimmingly. I hope the USB drive didn't give you too much trouble coming out. The information from the alien Computer has been downloaded to this drive, which will give us a great advantage in preventing future abductions. You have served Queen and Country again, now use the Teleporter and escape the ship. If you run into any of the buggers-- remember your Watch, it's quite an eyesore. \n God speed, James. \n -Q"
+  exit_trigger: true,
+  triggers_on: '',
+  death_trigger: nil,
+)
+Item.create(
+  name: 'Teleporter',
+  is_takeable: false,
+  description:
+    'The teleporter, an impressive piece of alien technology. A touch screen with a blueprint of the ship determines your destination, currently set to the Airlock and Escape Pods, conveniently for you. Inconvenient however-- the Teleporter seems to be on the fritz; sparks and static seem to be coming from the machine. \n 1. Use the Teleporter \n 2. Reconsider',
+  inspect_choice_1: "Hearing the steps of nearby aliens, you know you don't have time to worry about the state of the Teleporter. You hit the START button, ready to escape, but as it begins to whirr, smoke comes out of the machine and the machine reduces you to a pile of fleshy goop on the floor. You are dead.",
+  inspect_choice_2: "You do not use the Teleporter. Is there a reliable, old fashioned way to get a complicated piece of tech working?",
+  is_talkable: false,
+  talk_response: nil,
+  talk_choice_1: nil,
+  talk_choice_2: nil,
+  is_attackable: true,
+  attack_response: "You smack the teleporter a few times, and all the sparks and static cease. It seems to be back to working perfectly. You may now EXIT the room.",
+  durability: 0.0,
+  catalyst_item: true,
+  catalyst_response: '',
+  exit_trigger: false,
+  triggers_on: 'attack',
+  death_trigger: 1,
 )
 
 Inventory.create(user_id: 1, item_id: 1, has: false)
@@ -178,10 +323,10 @@ Room.create(
 Room.create(
   name: 'Laboratory',
   description:
-    'After stumbling through the disorienting labrynth of the ship, and attempting many doors you finally arrive on one that is ajar. You enter, the first thing that jumps out to you in the clearly Deadman lying on some sort of inspection table. Scanning the room you see a Teleporting station, a Log, a Computer, and a Stungun',
-  death_threshold: 5,
+    "You've escaped your cell, but hear the footsteps of more aliens quickly approaching. You open the door to the nearest room and shut the door behind you. You find yourself in some sort of Laboratory--a dissected human Body is displayed on a surgical table next to a surgical Knife and other instruments. Nearby is a scientist's Desk, on it a Computer. On the other end of the room, you see a device that resembles the classic Star Trek 'beam me up Scotty' Teleporter, with a blueprint of the ship on a screen.",
+  death_threshold: 10,
   death_threshold_met:
-    'You hear a frenzy of radio chatter outside, and realize you are surrounded. Frantically you rush towards the teleporter and press the big red "Beam me up" button. The last thing you hear is "Human butthole dectected, malfunctioning" You do not survive the process. You are dead.',
+    'You hear a pounding on the door, followed by a long silence. Just as you think you are safe, the vents in the room let out a green gas, that in addition to killing you, smells quite terrible.',
 )
 
 ItemLocation.create(item_id: 1, room_id: 1, is_in: true)
@@ -189,5 +334,13 @@ ItemLocation.create(item_id: 2, room_id: 1, is_in: true)
 ItemLocation.create(item_id: 3, room_id: 1, is_in: true)
 ItemLocation.create(item_id: 4, room_id: 1, is_in: true)
 ItemLocation.create(item_id: 5, room_id: 1, is_in: true)
+ItemLocation.create(item_id: 6, room_id: 2, is_in: true)
+ItemLocation.create(item_id: 7, room_id: 2, is_in: true)
+ItemLocation.create(item_id: 8, room_id: 2, is_in: true)
+ItemLocation.create(item_id: 9, room_id: 2, is_in: true)
+ItemLocation.create(item_id: 10, room_id: 2, is_in: true)
+ItemLocation.create(item_id: 11, room_id: 2, is_in: true)
+ItemLocation.create(item_id: 12, room_id: 2, is_in: true)
+ItemLocation.create(item_id: 13, room_id: 2, is_in: true)
 
 puts 'done seeding'
