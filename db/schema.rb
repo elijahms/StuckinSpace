@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_07_192114) do
+ActiveRecord::Schema.define(version: 2021_12_09_160208) do
 
   create_table "inventories", force: :cascade do |t|
     t.integer "user_id"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2021_12_07_192114) do
     t.string "description"
     t.integer "death_threshold"
     t.string "death_threshold_met"
+    t.string "intro_description"
   end
 
   create_table "users", force: :cascade do |t|
@@ -61,6 +62,8 @@ ActiveRecord::Schema.define(version: 2021_12_07_192114) do
     t.boolean "is_dead"
     t.integer "room_id"
     t.string "email"
+    t.integer "minutes_in_game"
+    t.integer "second_in_game"
   end
 
 end
