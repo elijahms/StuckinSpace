@@ -8,7 +8,7 @@ puts 'Seeding Data'
     is_dead: false,
     room_id: 1,
     minutes_in_game: 0,
-    second_in_game: 0,
+    seconds_in_game: 0,
   )
 end
 
@@ -48,7 +48,7 @@ Item.create(
   is_talkable: true,
   talk_response:
     " 'You're awake already? Most of the poor souls that I've shared this cell with are still asleep by now. Consider yourself unlucky, as you'll probably be awake through it all. ...Me? I got picked up a few weeks, months, maybe years ago. I've been told I'm not a 'proper specimen,' I'm too tight for the probe. \n 
-  Anyway, they'll be in here any minute now to drag you away. Unless... you have any ideas? Between the two of us, there are plenty of classic 'break-out-of-jail' gambits we could pull.' \n
+  Anyway, they'll be in here any minute now to drag you away. \n Unless... \n You have any ideas? Between the two of us, there are plenty of classic 'break-out-of-jail' gambits we could pull.' \n
   1. Suggest he pretend to be sick-- you will call for help, and together you can overpower the guard. \n
   2. Suggest a fake prison fight-- you will hit him, and the guard will come break it up.",
   talk_choice_1:
@@ -122,7 +122,7 @@ Item.create(
   talk_response: nil,
   talk_choice_1: nil,
   talk_choice_2: nil,
-  is_attackable: true,
+  is_attackable: false,
   attack_response: nil,
   durability: 0.0,
   catalyst_item: 0,
@@ -273,7 +273,7 @@ Item.create(
   catalyst_response:
     "You insert the USB-C drive into the Computer, and a message in English begins to display on the screen: \n
   Bond, \n
-  If you're reading this message, the plan to have you abducted has gone swimmingly. I hope the USB drive didn't give you too much trouble coming out the other end. The information from the alien Computer has been downloaded to this drive, which will give us a great advantage in preventing future abductions. You have served Queen and Country again, now use the Teleporter and escape the ship. If you run into any of the buggers-- remember your Watch, it's quite an eyesore. \n God speed, James. \n -Q",
+  If you're reading this message, the plan to have you abducted has gone swimmingly.\n I hope the USB drive didn't give you too much trouble coming out the other end.\n The information from the alien Computer has been downloaded to this drive, which will give us a great advantage in preventing future abductions.\n You have served Queen and Country again, now use the Teleporter and escape the ship. If you run into any of the buggers-- remember your Watch, it's quite an eyesore. \n \n God speed, James. \n -Q",
   exit_trigger: true,
   triggers_on: '',
   death_trigger: nil,
@@ -300,7 +300,7 @@ Item.create(
     'You attempt to insert the USB-C drive into the Teleporter, but it only has USB-A and CD-ROM. Technology can be a pain in the butt. ',
   exit_trigger: false,
   triggers_on: 'attack',
-  death_trigger: 1,
+  death_trigger: '1',
 )
 Item.create(
   name: 'Crew',
@@ -311,7 +311,7 @@ Item.create(
   inspect_choice_2: nil,
   is_talkable: true,
   talk_response:
-    "There's no version of this where you make it out alive. Even if you had made it to the Escape Pods, our auto targeting system would blow you to pieces. Surrender or die, human scum. The road ends here. You are stuck in space. \n
+    "An alien speaks: 'There's no version of this where you make it out alive. Even if you had made it to the Escape Pods, our auto targeting system would blow you to pieces. Surrender or die, human scum. The road ends here. You are stuck in space.' \n
   1. Surrender to the aliens and accept the probe \n
   2. Make a defiant quip and buy yourself some time",
   talk_choice_1:
@@ -332,22 +332,165 @@ Item.create(
   triggers_on: 'use',
   death_trigger: 'attack',
 )
-
-Inventory.create(user_id: 1, item_id: 1, has: false)
-Inventory.create(user_id: 1, item_id: 2, has: false)
-Inventory.create(user_id: 1, item_id: 3, has: false)
-Inventory.create(user_id: 2, item_id: 1, has: false)
-Inventory.create(user_id: 2, item_id: 2, has: false)
-Inventory.create(user_id: 2, item_id: 3, has: false)
-Inventory.create(user_id: 3, item_id: 1, has: false)
-Inventory.create(user_id: 3, item_id: 2, has: false)
-Inventory.create(user_id: 3, item_id: 3, has: false)
-Inventory.create(user_id: 4, item_id: 1, has: false)
-Inventory.create(user_id: 4, item_id: 2, has: false)
-Inventory.create(user_id: 4, item_id: 3, has: false)
-Inventory.create(user_id: 5, item_id: 1, has: false)
-Inventory.create(user_id: 5, item_id: 2, has: false)
-Inventory.create(user_id: 5, item_id: 3, has: false)
+Item.create(
+  name: 'Bowtie',
+  is_takeable: true,
+  description:
+    'A very classy black Bowtie, clearly belonging to a very classy man.',
+  inspect_choice_1: nil,
+  inspect_choice_2: nil,
+  is_talkable: false,
+  talk_response: nil,
+  talk_choice_1: nil,
+  talk_choice_2: nil,
+  is_attackable: nil,
+  attack_response: nil,
+  durability: 0.0,
+  catalyst_item: nil,
+  catalyst_response: nil,
+  exit_trigger: true,
+  triggers_on: nil,
+  death_trigger: nil,
+)
+Item.create(
+  name: 'Escape-Pods',
+  is_takeable: false,
+  description:
+    "You walk up to the Escape Pods. A small rocketship with basic rudimentary controls. You believe this pod will be enough to get you back to Earth. If you take it, this could finally be the end of your odyssey. \n
+    1. Get in the Escape Pod and launch it. \n
+    2. Launch an empty Escape Pod into space.",
+  inspect_choice_1:
+    "You get into the Escape Pod and launch yourself into space. You are able to figure out the basic controls and begin flying back toward Earth. As you finally exhale and feel safe, the sirens of your ship begin to flash and alarm. You look out the window of your ship and see a massive torpedo, fired from the alien mothership, heading in your direction. This is the last thing you see before you die. \n \nYou are dead.",
+  inspect_choice_2:
+    'To test the controls, or perhaps because you were feeling skittish, you launch an empty Escape Pod into space. And whether it was luck or foresight--you made the right decision. Seconds after the Escape Pod is launched, a torpedo from the alien mothership is launched and destroyds the Escaped Pod. They know that this is your way off the ship.',
+  is_talkable: false,
+  talk_response: nil,
+  talk_choice_1: nil,
+  talk_choice_2: nil,
+  is_attackable: nil,
+  attack_response: nil,
+  durability: 0.0,
+  catalyst_item: nil,
+  catalyst_response: nil,
+  exit_trigger: false,
+  triggers_on: 'inspect',
+  death_trigger: '1',
+)
+Item.create(
+  name: 'Engineer',
+  is_takeable: false,
+  description:
+    "Judging from the difference in anatomical features, you surmise the alien Engineer to be the first alien woman you've seen on the ship. She is wearing a grease-covered jumpsuit and holding a wrapped package in her arms. She seemed to be watching the door expecting someone to arrive, but when it was you, her eyes filled with disappointment.",
+  inspect_choice_1: nil,
+  inspect_choice_2: nil,
+  is_talkable: true,
+  talk_response:
+    "The alien Engineer speaks English, but in an accent foreign to your world:\n 'You aren't James. Where is he, human? Do you know him? He is a magnificent gentleman of class. Women want him and men want to be him. It was out of love and desire for him that I've betrayed my own kind to save yours. He told me to meet him here in the Airlock and aid in his escape. But it's you I see here now. And you're no James Bond.' \n Your chances of escaping this ship are slim without the help of the Engineer, and she is in no emotional state to assist you. \n
+  1. Comfort the Engineer on her loss. \n
+  2. Seduce the Engineer",
+  talk_choice_1:
+    "You put your hand on the Engineer's shoulder and attempt to comfort her. \n 'If only I had something to remember him by. He was such a classy man. A species that could produce a man so elegant does not deserve the cruel fate we have in store for Earth.' ",
+  talk_choice_2:
+    "You put your hand on the small of the Engineer's back and attempt to seduce her. She recoils. \n
+  'Once you've eaten Zandarian Space Worm you don't want Gylorkian Sand Rat.' You don't exactly understand her metaphor but you get the gist. \n
+  Is there a way to make yourself more classy and win the Engineer's love?",
+  is_attackable: true,
+  attack_response:
+    'You punch the Engineer in the face. You were expecting her face to collapse like all the previous aliens, but instead it feels like you punched a steel wall.  The Engineer pushes you into a wall and it feels like you have been hit by a truck. She grabs you and tosses you around the room like a piñata, slamming you against the walls and ceiling as you feel the life leave your body. You wish you knew that the women of this species have skin as hard as stone and the strength of ten humans. You are dead.',
+  durability: 0.0,
+  catalyst_item: 15,
+  catalyst_response:
+    "You put on the classy Bowtie and approach the Engineer. Her eyes are filled with a healthy mixture of sadness and desire. She pulls you in, quite forcefully, and plants a kiss on your lips. Honestly, it feels kind of not-great. \n
+  'Thank you, sexy Earth-man. You have reminded me of why I decided to save your species in the first place. The hot dudes. \n
+  Do not take the Escape-Pods, the radar of the mothership will pick your presence up and destroy your ship imminently. Your best hope is to open the Airlock and float through space--you will be too small for our radar and with some luck, a human vessel will retrieve you. \n 
+  Please take these items: a human Spacesuit, and my Authenticator, needed to access the Terminal and open the Airlock.\n
+  Maybe one day, our people will be able to live in peace. And bang.",
+  exit_trigger: false,
+  triggers_on: 'use',
+  death_trigger: 'attack',
+)
+Item.create(
+  name: 'Spacesuit',
+  is_takeable: true,
+  description:
+    'A spacesuit, made by the aliens but specifically tailored and specially rigged for a human body. Built for the body of a larger, more attractive man, but it will fit.',
+  inspect_choice_1: nil,
+  inspect_choice_2: nil,
+  is_talkable: false,
+  talk_response: nil,
+  talk_choice_1: nil,
+  talk_choice_2: nil,
+  is_attackable: nil,
+  attack_response: nil,
+  durability: 0.0,
+  catalyst_item: nil,
+  catalyst_response: nil,
+  exit_trigger: false,
+  triggers_on: 'take',
+  death_trigger: nil,
+)
+Item.create(
+  name: 'Authenticator',
+  is_takeable: true,
+  description:
+    "An alien Authenticator, a pocket-sized device that when waved in front of a locked Computer or Terminal, activates it with the owner's credentials.",
+  inspect_choice_1: nil,
+  inspect_choice_2: nil,
+  is_talkable: false,
+  talk_response: nil,
+  talk_choice_1: nil,
+  talk_choice_2: nil,
+  is_attackable: nil,
+  attack_response: nil,
+  durability: 0.0,
+  catalyst_item: nil,
+  catalyst_response: nil,
+  exit_trigger: false,
+  triggers_on: 'take',
+  death_trigger: nil,
+)
+Item.create(
+  name: 'Terminal',
+  is_takeable: false,
+  description:
+    'A computer Terminal that controls the Airlock. It seems easy enough to operate, with OPEN and CLOSE buttons, but it seems to be locked behind a login.',
+  inspect_choice_1: nil,
+  inspect_choice_2: nil,
+  is_talkable: false,
+  talk_response: nil,
+  talk_choice_1: nil,
+  talk_choice_2: nil,
+  is_attackable: nil,
+  attack_response: nil,
+  durability: 0.0,
+  catalyst_item: 19,
+  catalyst_response:
+    "You wave the Authenticator in front of the Terminal, and the screen displays a message in the alien language. The Terminal's keyboard lights up, indicating it is ready to be activated and the Airlock doors can be opened.",
+  exit_trigger: false,
+  triggers_on: 'use',
+  death_trigger: nil,
+)
+Item.create(
+  name: 'Airlock',
+  is_takeable: false,
+  description:
+    'A large blast door, controlled by a nearby Terminal. When opened, will expose the room to the void of space, sucking out everything not tied down. Without a proper space suit, opening the Airlock means the certainty of a cold death. With a proper space suit, opening the Airlock means the certain uncertainty of being alone in the vastness of space. The door seems to have a bit of rust sealing it shut--it clearly has not been used for some time.',
+  inspect_choice_1: nil,
+  inspect_choice_2: nil,
+  is_talkable: false,
+  talk_response: nil,
+  talk_choice_1: nil,
+  talk_choice_2: nil,
+  is_attackable: true,
+  attack_response:
+    'You smash into the doors of the Airlock, and with each smash, you feel the hinges of the door loosening up and shedding the rust that binds it closed. After a few attempts, you feel confident that the Terminal will open the Airlock.',
+  durability: 0.0,
+  catalyst_item: nil,
+  catalyst_response: nil,
+  exit_trigger: false,
+  triggers_on: 'attack',
+  death_trigger: nil,
+)
 
 #Room seeding
 Room.create(
@@ -381,6 +524,16 @@ Room.create(
     "You emerge from the Teleporter--the feeling of your molecules being disassembled and reassembled was unnerving but all things considered, quite seamless. You are in a hallway, and across from you is the door to the Escape Pods and Airlock. Standing between you and salvation, however, is a large number of the ship's alien Crew. One of them speaks to you: \n 'You have done well to make it this far, human scum. But this is the end of the road for you. Surrender or die.",
 )
 
+Room.create(
+  name: 'Airlock',
+  description:
+    'You are at the entrance to the Airlock, located deep in the bowels of the ship. When activated, a large automatic door will open up to the vastness of space, sucking out anything not tied down. The doors are controlled by a Terminal next to the doors. This room also contains the Escape-Pods, with controls to launch them. An alien Engineer, who from her features seems to be a female, is waiting by the Escape-Pods with a package in hand.',
+  death_threshold: 15,
+  death_threshold_met: '',
+  intro_description:
+    "After activating your Watch gadget and burning out the eyes of the alien crew, you escape into the Airlock room. When you enter, you are startled by the presence of an alien woman, who seems to be the ship's Engineer, based on her jumpsuit and grease stains. The Airlock room contains a large automatic door that opens up to the vastness of space, sucking out anything not tied down. The door is controlled by a Terminal. This room also contains the Escape-Pods, with controls to launch them. You are so close to getting home.",
+)
+
 ItemLocation.create(item_id: 1, room_id: 1, is_in: true)
 ItemLocation.create(item_id: 2, room_id: 1, is_in: true)
 ItemLocation.create(item_id: 3, room_id: 1, is_in: true)
@@ -394,5 +547,23 @@ ItemLocation.create(item_id: 10, room_id: 2, is_in: true)
 ItemLocation.create(item_id: 11, room_id: 2, is_in: true)
 ItemLocation.create(item_id: 12, room_id: 2, is_in: true)
 ItemLocation.create(item_id: 13, room_id: 2, is_in: true)
+ItemLocation.create(item_id: 15, room_id: 2, is_in: true)
+ItemLocation.create(item_id: 14, room_id: 3, is_in: true)
+
+Inventory.create(user_id: 1, item_id: 1, has: false)
+Inventory.create(user_id: 1, item_id: 2, has: false)
+Inventory.create(user_id: 1, item_id: 3, has: false)
+Inventory.create(user_id: 2, item_id: 1, has: false)
+Inventory.create(user_id: 2, item_id: 2, has: false)
+Inventory.create(user_id: 2, item_id: 3, has: false)
+Inventory.create(user_id: 3, item_id: 1, has: false)
+Inventory.create(user_id: 3, item_id: 2, has: false)
+Inventory.create(user_id: 3, item_id: 3, has: false)
+Inventory.create(user_id: 4, item_id: 1, has: false)
+Inventory.create(user_id: 4, item_id: 2, has: false)
+Inventory.create(user_id: 4, item_id: 3, has: false)
+Inventory.create(user_id: 5, item_id: 1, has: false)
+Inventory.create(user_id: 5, item_id: 2, has: false)
+Inventory.create(user_id: 5, item_id: 3, has: false)
 
 puts 'done seeding'

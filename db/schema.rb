@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_09_160208) do
+ActiveRecord::Schema.define(version: 2021_12_09_175752) do
 
   create_table "inventories", force: :cascade do |t|
     t.integer "user_id"
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2021_12_09_160208) do
     t.integer "room_id"
     t.string "email"
     t.integer "minutes_in_game"
-    t.integer "second_in_game"
+    t.integer "seconds_in_game"
   end
 
 end
