@@ -320,7 +320,7 @@ Item.create(
   durability: 0.0,
   catalyst_item: 5,
   catalyst_response:
-    "You wave the guard's Keycard near the locked drawer, and it pops open. Inside, you see various valuables collected from dissected humans. Most notably, a Wallet and an Omega Watch.",
+    "You wave the guard's Keycard near the locked drawer, and it pops open. Inside, you see various valuables collected from dissected humans. Most notably, a Bowtie, a Wallet and an Omega Watch.",
   exit_trigger: true,
   triggers_on: '',
   death_trigger: nil,
