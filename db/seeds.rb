@@ -12,6 +12,117 @@ puts 'Seeding Data'
   )
 end
 
+User.create(
+  name: 'Okera',
+  health: rand(1..10),
+  score: 6969,
+  is_dead: false,
+  room_id: 1,
+  minutes_in_game: 0,
+  seconds_in_game: 0,
+)
+User.create(
+  name: 'Yuyi',
+  health: rand(1..10),
+  score: 42_000,
+  is_dead: false,
+  room_id: 1,
+  minutes_in_game: 0,
+  seconds_in_game: 0,
+)
+User.create(
+  name: 'Tiffany',
+  health: rand(1..10),
+  score: 9999,
+  is_dead: false,
+  room_id: 1,
+  minutes_in_game: 0,
+  seconds_in_game: 0,
+)
+User.create(
+  name: 'Andrew',
+  health: rand(1..10),
+  score: 8700,
+  is_dead: false,
+  room_id: 1,
+  minutes_in_game: 0,
+  seconds_in_game: 0,
+)
+User.create(
+  name: 'Max',
+  health: rand(1..10),
+  score: 8500,
+  is_dead: false,
+  room_id: 1,
+  minutes_in_game: 0,
+  seconds_in_game: 0,
+)
+User.create(
+  name: 'Elias',
+  health: rand(1..10),
+  score: 9000,
+  is_dead: false,
+  room_id: 1,
+  minutes_in_game: 0,
+  seconds_in_game: 0,
+)
+User.create(
+  name: 'Dom',
+  health: rand(1..10),
+  score: 0,
+  is_dead: false,
+  room_id: 1,
+  minutes_in_game: 0,
+  seconds_in_game: 0,
+)
+User.create(
+  name: 'Dan',
+  health: rand(1..10),
+  score: 6900,
+  is_dead: false,
+  room_id: 1,
+  minutes_in_game: 0,
+  seconds_in_game: 0,
+)
+User.create(
+  name: 'Ben',
+  health: rand(1..10),
+  score: 4204,
+  is_dead: false,
+  room_id: 1,
+  minutes_in_game: 0,
+  seconds_in_game: 0,
+)
+User.create(
+  name: 'Tani',
+  health: rand(1..10),
+  score: 0,
+  is_dead: false,
+  room_id: 1,
+  minutes_in_game: 0,
+  seconds_in_game: 0,
+)
+
+User.create(
+  name: 'Gene',
+  health: rand(1..10),
+  score: 0,
+  is_dead: false,
+  room_id: 1,
+  minutes_in_game: 0,
+  seconds_in_game: 0,
+)
+
+User.create(
+  name: 'David',
+  health: rand(1..10),
+  score: 0,
+  is_dead: false,
+  room_id: 1,
+  minutes_in_game: 0,
+  seconds_in_game: 0,
+)
+
 # Item.create(name: "TV", is_takeble: false, is_talkable: false, is_attackable: true, durability: 4.5, description: "The TV has the launch of a phallic shaped rocket playing on repeat")
 # Item.create(name: "ּBook", is_takeble: true, is_talkable: false, is_attackable: true, durability: 1.5, description: "Dune, open to page 467 'The path of the righteous'")
 # Item.create(name: "Switch", is_takeble: false, is_talkable: false, is_attackable: false, durability: 0, description: "You've overloaded the room with light")
@@ -494,8 +605,7 @@ Item.create(
 Item.create(
   name: 'Bezos',
   is_takeable: false,
-  description:
-    "",
+  description: '',
   inspect_choice_1: nil,
   inspect_choice_2: nil,
   is_talkable: false,
@@ -503,8 +613,7 @@ Item.create(
   talk_choice_1: nil,
   talk_choice_2: nil,
   is_attackable: true,
-  attack_response:
-    "",
+  attack_response: '',
   durability: 0.0,
   catalyst_item: nil,
   catalyst_response: nil,
@@ -512,7 +621,6 @@ Item.create(
   triggers_on: 'attack',
   death_trigger: nil,
 )
-
 
 #Room seeding
 Room.create(
@@ -566,19 +674,19 @@ Room.create(
 )
 
 Room.create(
-  name: 'Blue Origin Space Cruise'
+  name: 'Blue Origin Space Cruise',
   description:
-  "You are in the luxury ballroom of the Amazon Blue Origin space cruiser. A string quartet plays Schubert's 13th as the glamorous and beautiful celebrities mingle. The servants are hard at work, serving hors d'oeuvres on sterling silver plates and refilling wine glasses. You are greeted by Bezos, wearing a cowboy hat, but his Goons block your entrance to the ballroom.'",
-death_threshold: 10,
-death_threshold_met:
-  "Jeff Bezos grows agitated as he awaits your payment: \n
+    "You are in the luxury ballroom of the Amazon Blue Origin space cruiser. A string quartet plays Schubert's 13th as the glamorous and beautiful celebrities mingle. The servants are hard at work, serving hors d'oeuvres on sterling silver plates and refilling wine glasses. You are greeted by Bezos, wearing a cowboy hat, but his Goons block your entrance to the ballroom.'",
+  death_threshold: 10,
+  death_threshold_met:
+    "Jeff Bezos grows agitated as he awaits your payment: \n
   'You know, I'd love to help you but... no free rides. It's the rules of the road: gas, grass or ass.' \n
   He turns his head as he hears one of his celebrity friends call his name. You think that might have been Jay-Z's voice. \n
   He snaps his fingers and his Amazon Goons grab you by the shoulders. They drag you toward the ship's Airlock and throw you in. \n
   The doors open and you are sucked into space, where you die in the cold vastness of space. You are dead. You will be Stuck in Space forever.
 ",
-intro_description:
-  "You put on your Spacesuit and activate the ship's Airlock. You are sucked into space, and you can see the alien mothership drift by. After a few minutes, the mothership flies away, back to the alien homeworld. You have successfully escaped the aliens. \n
+  intro_description:
+    "You put on your Spacesuit and activate the ship's Airlock. You are sucked into space, and you can see the alien mothership drift by. After a few minutes, the mothership flies away, back to the alien homeworld. You have successfully escaped the aliens. \n
   But now, you are alone, Stuck in Space. (That's the title of the game)\n
   Your odds of survival are low, and you float alone in space for many hours, your hope dwindling.\n
   Miraculously, a spaceship heading in the direction of Earth flies nearby. Through the cockpit windows you can see a man in a cowboy hat. It does not suit him, \n
