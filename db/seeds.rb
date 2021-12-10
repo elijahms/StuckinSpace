@@ -605,21 +605,33 @@ Item.create(
 Item.create(
   name: 'Bezos',
   is_takeable: false,
-  description: '',
+  description:
+    'Jeff Bezos, in all his glory. Bald, wearing a cowboy hat, totally ripped, and totally going through a mid-life crisis.',
   inspect_choice_1: nil,
   inspect_choice_2: nil,
-  is_talkable: false,
-  talk_response: nil,
+  is_talkable: true,
+  talk_response:
+    "Welcome to the Amazon Blue Origins Cruise Line! You're lucky we found you. I won't ask how you ended up here--but here's hoping it's because you're the lone survivor of a SpaceX rocket explosion. \n
+  Let's get down to brass tax--this is our luxury liner, so I can't let you ride for free. I'd love to, I really would, but I have shareholders to answer to. It's my fiduciary responsibility to throw you out of the airlock if you can't pay.",
   talk_choice_1: nil,
   talk_choice_2: nil,
   is_attackable: true,
-  attack_response: '',
+  attack_response:
+    "You punch Jeff Bezos in the face, living the dream of many across the world. It feels amazing. Unfortunately, Jeff Bezos is ripped now. In a blazing flash of Kung Fu, he attacks all of your body's pressure points and your heart stops. 
+  'I'll get your body home in 2 days or less. That's the Prime guarantee.'
+  You are dead. ",
   durability: 0.0,
-  catalyst_item: nil,
-  catalyst_response: nil,
+  catalyst_item: 11,
+  catalyst_response:
+    "You hand Jeff Bezos the Wallet with £50,000 cash. He opens it up and thumbs through the money. \n
+  'This is enough for your initial deposit. We will fly you home, and charge you the rest on your Amazon card.' \n
+  Bezos allows you in to the luxurious ballroom, where you socialize with all of Earth's most beautiful celebrities. \n
+  You have escaped the aliens, you are no longer stuck in space. When you return to Earth you will be very influential and wealthy. \n
+  You hear a voice, you think it's that of former president Barack Obama: \n
+  'Now let me be clear--you've won the game. Hit EXIT to finish the game and view your high score on the leaderboard. God Bless America.'",
   exit_trigger: false,
-  triggers_on: 'attack',
-  death_trigger: nil,
+  triggers_on: 'use',
+  death_trigger: 'attack',
 )
 
 #Room seeding
@@ -709,13 +721,14 @@ ItemLocation.create(item_id: 11, room_id: 2, is_in: true)
 ItemLocation.create(item_id: 12, room_id: 2, is_in: true)
 ItemLocation.create(item_id: 13, room_id: 2, is_in: true)
 ItemLocation.create(item_id: 15, room_id: 2, is_in: true)
-ItemLocation.create(item_id: 14, room_id: 3, is_in: true)
-ItemLocation.create(item_id: 16, room_id: 3, is_in: true)
-ItemLocation.create(item_id: 17, room_id: 3, is_in: true)
-ItemLocation.create(item_id: 18, room_id: 3, is_in: true)
-ItemLocation.create(item_id: 19, room_id: 3, is_in: true)
-ItemLocation.create(item_id: 20, room_id: 3, is_in: true)
-ItemLocation.create(item_id: 21, room_id: 3, is_in: true)
+ItemLocation.create(item_id: 14, room_id: 4, is_in: true)
+ItemLocation.create(item_id: 16, room_id: 4, is_in: true)
+ItemLocation.create(item_id: 17, room_id: 4, is_in: true)
+ItemLocation.create(item_id: 18, room_id: 4, is_in: true)
+ItemLocation.create(item_id: 19, room_id: 4, is_in: true)
+ItemLocation.create(item_id: 20, room_id: 4, is_in: true)
+ItemLocation.create(item_id: 21, room_id: 4, is_in: true)
+ItemLocation.create(item_id: 22, room_id: 5, is_in: true)
 
 Inventory.create(user_id: 1, item_id: 1, has: false)
 Inventory.create(user_id: 1, item_id: 2, has: false)
