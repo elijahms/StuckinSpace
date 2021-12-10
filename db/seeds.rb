@@ -491,6 +491,28 @@ Item.create(
   triggers_on: 'attack',
   death_trigger: nil,
 )
+Item.create(
+  name: 'Bezos',
+  is_takeable: false,
+  description:
+    "",
+  inspect_choice_1: nil,
+  inspect_choice_2: nil,
+  is_talkable: false,
+  talk_response: nil,
+  talk_choice_1: nil,
+  talk_choice_2: nil,
+  is_attackable: true,
+  attack_response:
+    "",
+  durability: 0.0,
+  catalyst_item: nil,
+  catalyst_response: nil,
+  exit_trigger: false,
+  triggers_on: 'attack',
+  death_trigger: nil,
+)
+
 
 #Room seeding
 Room.create(
@@ -518,8 +540,11 @@ Room.create(
   name: 'Hallway',
   description:
     "You are in a hallway. The door to the ship's Escape Pods and Airlock is across from you, but blocked by a large number of the alien Crew. They have you surrounded in all directions. They are too numerous to fight off.",
-  death_threshold: 3,
-  death_threshold_met: '',
+  death_threshold: 6,
+  death_threshold_met:
+    "The alien Crew, with their laser eyes fixed on your position, await your surrender. After some time, they realize you have been stalling and their captain gives the order: \n
+  'Fire.' \n
+  The aliens' eyes glow with a red intensity, and lasers shoot toward you. You are reduced to a pile of ash on the floor. You are put in a dustbin and placed in the garbage. You are dead.",
   intro_description:
     "You emerge from the Teleporter--the feeling of your molecules being disassembled and reassembled was unnerving but all things considered, quite seamless. You are in a hallway, and across from you is the door to the Escape Pods and Airlock. Standing between you and salvation, however, is a large number of the ship's alien Crew. One of them speaks to you: \n 'You have done well to make it this far, human scum. But this is the end of the road for you. Surrender or die.",
 )
@@ -529,9 +554,37 @@ Room.create(
   description:
     'You are at the entrance to the Airlock, located deep in the bowels of the ship. When activated, a large automatic door will open up to the vastness of space, sucking out anything not tied down. The doors are controlled by a Terminal next to the doors. This room also contains the Escape-Pods, with controls to launch them. An alien Engineer, who from her features seems to be a female, is waiting by the Escape-Pods with a package in hand.',
   death_threshold: 15,
-  death_threshold_met: '',
+  death_threshold_met:
+    "A voice fills the room of the Airlock: \n
+  'I know you are in there, human scum. You have dozens of my crew, and I will exact my revenge one hundred fold. \n
+  The humans of your planet will pay the price for your actions. You and the traitorous concubine Engineer will die in the cold.'\n
+  The sirens in the room activate, red lights flash and the doors to the Airlock begin to open. You are sucked into the vast emptiness of space. \n
+  You are dead. You will be Stuck in Space forever.
+  ",
   intro_description:
     "After activating your Watch gadget and burning out the eyes of the alien crew, you escape into the Airlock room. When you enter, you are startled by the presence of an alien woman, who seems to be the ship's Engineer, based on her jumpsuit and grease stains. The Airlock room contains a large automatic door that opens up to the vastness of space, sucking out anything not tied down. The door is controlled by a Terminal. This room also contains the Escape-Pods, with controls to launch them. You are so close to getting home.",
+)
+
+Room.create(
+  name: 'Blue Origin Space Cruise'
+  description:
+  "You are in the luxury ballroom of the Amazon Blue Origin space cruiser. A string quartet plays Schubert's 13th as the glamorous and beautiful celebrities mingle. The servants are hard at work, serving hors d'oeuvres on sterling silver plates and refilling wine glasses. You are greeted by Bezos, wearing a cowboy hat, but his Goons block your entrance to the ballroom.'",
+death_threshold: 10,
+death_threshold_met:
+  "Jeff Bezos grows agitated as he awaits your payment: \n
+  'You know, I'd love to help you but... no free rides. It's the rules of the road: gas, grass or ass.' \n
+  He turns his head as he hears one of his celebrity friends call his name. You think that might have been Jay-Z's voice. \n
+  He snaps his fingers and his Amazon Goons grab you by the shoulders. They drag you toward the ship's Airlock and throw you in. \n
+  The doors open and you are sucked into space, where you die in the cold vastness of space. You are dead. You will be Stuck in Space forever.
+",
+intro_description:
+  "You put on your Spacesuit and activate the ship's Airlock. You are sucked into space, and you can see the alien mothership drift by. After a few minutes, the mothership flies away, back to the alien homeworld. You have successfully escaped the aliens. \n
+  But now, you are alone, Stuck in Space. (That's the title of the game)\n
+  Your odds of survival are low, and you float alone in space for many hours, your hope dwindling.\n
+  Miraculously, a spaceship heading in the direction of Earth flies nearby. Through the cockpit windows you can see a man in a cowboy hat. It does not suit him, \n
+  The ship stops for you and picks you up. You are let in via the Airlock and walked through the cargo hold by workers wearing bright orange vests. \n
+  You are led to the stairs, and the orange vest workers tell you 'We cannot accompany you any further.' \n
+  You head up the stairs, and you find yourself in the luxury ballroom of the Amazon Blue Origin space cruiser. A string quartet plays Schubert's 13th as the glamorous and beautiful celebrities mingle. The servants are hard at work, serving hors d'oeuvres on sterling silver plates and refilling wine glasses. You are greeted by Bezos, wearing a cowboy hat, but his Goons block your entrance to the ballroom.",
 )
 
 ItemLocation.create(item_id: 1, room_id: 1, is_in: true)
