@@ -6,7 +6,7 @@ class ApplicationController < Sinatra::Base
       User.create(
         name: params[:username],
         health: 3,
-        score: 10_000,
+        score: 0,
         is_dead: 0,
         room_id: 0,
         email: params[:email],
@@ -45,5 +45,4 @@ class ApplicationController < Sinatra::Base
     all_user_stats = User.pluck(:name, :score)
     all_user_stats.to_json
   end
-
 end
