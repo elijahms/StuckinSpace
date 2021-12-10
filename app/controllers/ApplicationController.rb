@@ -42,9 +42,8 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/alluserstats' do
-    all_users_stats = User.pluck(:name, :score)
-    all_users_stats.to_json
+    all_user_stats = User.pluck(:name, :score)
+    all_user_stats.to_json
   end
-
 
 end
