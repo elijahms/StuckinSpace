@@ -1,16 +1,16 @@
 puts 'Seeding Data'
 
-5.times do
-  User.create(
-    name: Faker::Name.name,
-    health: rand(1..10),
-    score: 0,
-    is_dead: false,
-    room_id: 1,
-    minutes_in_game: 0,
-    seconds_in_game: 0,
-  )
-end
+# 5.times do
+#   User.create(
+#     name: Faker::Name.name,
+#     health: rand(1..10),
+#     score: 0,
+#     is_dead: false,
+#     room_id: 1,
+#     minutes_in_game: 0,
+#     seconds_in_game: 0,
+#   )
+# end
 
 User.create(
   name: 'Okera',
