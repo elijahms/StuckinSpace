@@ -21,7 +21,7 @@ Item.create(
   name: 'Window',
   is_takeable: false,
   description:
-    "You look out the window, and realize you are among the stars. You can still see Earth, and judging from its distance, you have not been on this ship for too long. If you haven't figured it out already, you are on a space ship. How you got here? That's for you to figure out.",
+    "You look out the window, and realize you are among the stars. You can still see Earth, and judging from its distance, you have not been on this ship long. If you haven't figured it out already, you are on a space ship. How you got here? That's for you to figure out.",
   inspect_choice_1: nil,
   inspect_choice_2: nil,
   is_talkable: false,
@@ -57,7 +57,7 @@ Item.create(
     " 'It's been so long since I've felt anything that I welcome pain. Hit me as hard as you can, so I can feel the sublime ecstasy of pleasure. Go on, do it! ' ",
   is_attackable: true,
   attack_response:
-    " You punch your cellmate in the face. 'My nose! You broke my god damn nose! What is wrong with you?! Guard!!!' Blood flowing down his face, he calls for the guard: a tall, smooth, grey alien temporarily deactivates the laser wall with a Keycard and enters your cell. The Guard seems surprised to see you awake, so you have a chance to surprise him.",
+    " You punch your cellmate in the face. 'My nose! You broke my goddamn nose! What is wrong with you?! Guard!!!' Blood flowing down his face, he calls for the guard: a tall, smooth, grey alien temporarily deactivates the laser wall with a Keycard and enters your cell. The Guard seems surprised to see you awake, so you have a chance to surprise him.",
   durability: 1.0,
   catalyst_item: 0,
   catalyst_response: nil,
@@ -115,7 +115,7 @@ Item.create(
   name: 'Keycard',
   is_takeable: true,
   description:
-    'A thin card held by the alien Guard. When waved at the laser wall, lowers the Lasers and allows the holder to pass through.',
+    'A thin card held by the alien Guard. When waved at the laser wall, it lowers the Lasers and allows the holder to pass through.',
   inspect_choice_1: nil,
   inspect_choice_2: nil,
   is_talkable: false,
@@ -282,7 +282,7 @@ Item.create(
   name: 'Teleporter',
   is_takeable: false,
   description:
-    "The teleporter, an impressive piece of alien technology. A touch screen with a blueprint of the ship determines your destination, currently set to the Airlock and Escape Pods, conveniently for you. Inconvenient however-- the Teleporter seems to be on the fritz; sparks and static seem to be coming from the machine. \n 1. Use the Teleporter \n 2. Reconsider",
+    "The teleporter is an impressive piece of alien technology. A touch screen with a blueprint of the ship determines your destination, currently set to the Airlock and Escape Pods, conveniently for you. Inconvenient however-- the Teleporter seems to be on the fritz; sparks and static seem to be coming from the machine. \n 1. Use the Teleporter \n 2. Reconsider",
   inspect_choice_1:
     "Hearing the steps of nearby aliens, you know you don't have time to worry about the state of the Teleporter. You hit the START button, ready to escape, but as it begins to whirr, smoke comes out of the machine and the machine reduces you to a pile of fleshy goop on the floor. You are dead.",
   inspect_choice_2:
@@ -496,22 +496,22 @@ Item.create(
 Room.create(
   name: 'Cell',
   description:
-    'Beneath you, you feel the silent hum of an engine; the floors and walls are made of metal, but for one wall which seems to be made of powerful Lasers. You seem to be in some sort of cell. Additionally, the room has one Window and there seems to be a man, perhaps your Cellmate, babbling to himself nearby.',
+    'Beneath you, you feel the silent hum of an engine; the floors and walls are made of metal, except for one wall which looks to be made of powerful Lasers. You appear to be in some sort of cell. Additionally, the room has one Window and there seems to be a man, perhaps your Cellmate, babbling to himself nearby.',
   death_threshold: 5,
   death_threshold_met:
-    'Two tall, grey, smooth aliens enter the room, one wearing a military like garb and the other a lab coat. They are surprised to see you awake, but do not panic. The one in military garb points a small device at you, and you experience a quick shock followed by full-body-paralysis. They carry you through the alien ship and to a laboratory like room, where you are probed. You do not survive the process. You are dead.',
+    'Two tall, grey, smooth aliens enter the room, one wearing a military-like garb and the other a lab coat. They are surprised to see you awake, but do not panic. The one in military garb points a small device at you, and you experience a quick shock followed by full-body-paralysis. They carry you through the alien ship and to a laboratory like room, where you are probed. You do not survive the process. You are dead.',
   intro_description:
-    'You open your eyes, awakening from a slumber. You feel groggy, and you do not recognize the place you are in. Your cellphone has no service. Beneath you, you feel the silent hum of an engine; the floors and walls are made of metal, but for one wall which seems to be made of powerful Lasers. You seem to be in some sort of cell. Additionally, the room has one Window and there seems to be a man, perhaps your Cellmate, babbling to himself nearby.',
+    'You open your eyes, awakening from a slumber. You feel groggy, and you do not recognize the place you are in. Your cellphone has no service. Beneath you, you feel the silent hum of an engine; the floors and walls are made of metal, except for one wall which looks to be made of powerful Lasers. You appear to be in some sort of cell. Additionally, the room has one Window and there seems to be a man, perhaps your Cellmate, babbling to himself nearby.',
 )
 Room.create(
   name: 'Laboratory',
   description:
-    "You find yourself in some sort of Laboratory--a dissected human Body is displayed on a surgical table next to a surgical Knife and other instruments. Nearby is a scientist's Desk, on it a Computer. On the other end of the room, you see a device that resembles the classic Star Trek 'beam me up Scotty' Teleporter, with a blueprint of the ship on a screen.",
+    "You find yourself in some sort of Laboratory--a dissected human Body is displayed on a surgical table next to a surgical Knife and other instruments. Nearby is a scientist's Desk and on it, a Computer. On the other end of the room, you see a device that resembles the classic Star Trek 'beam me up Scotty' Teleporter, with a blueprint of the ship on a screen.",
   death_threshold: 10,
   death_threshold_met:
-    'You hear a pounding on the door, followed by a long silence. Just as you think you are safe, the vents in the room let out a green gas, that in addition to killing you, smells quite terrible.',
+    'You hear a pounding on the door, followed by a long silence. Just as you think you are safe, the vents in the room let out a green gas, that, in addition to killing you, smells quite terrible.',
   intro_description:
-    "You've escaped your cell, but hear the footsteps of more aliens quickly approaching. You open the door to the nearest room and shut the door behind you. You find yourself in some sort of Laboratory--a dissected human Body is displayed on a surgical table next to a surgical Knife and other instruments. Nearby is a scientist's Desk, on it a Computer. On the other end of the room, you see a device that resembles the classic Star Trek 'beam me up Scotty' Teleporter, with a blueprint of the ship on a screen.",
+    "You've escaped your cell, but hear the footsteps of more aliens quickly approaching. You open the door to the nearest room and shut the door behind you. You find yourself in some sort of Laboratory--a dissected human Body is displayed on a surgical table next to a surgical Knife and other instruments. Nearby is a scientist's Desk and on it, a Computer. On the other end of the room, you see a device that resembles the classic Star Trek 'beam me up Scotty' Teleporter, with a blueprint of the ship on a screen.",
 )
 
 Room.create(
